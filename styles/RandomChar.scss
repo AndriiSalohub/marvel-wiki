@@ -1,0 +1,222 @@
+.random-char{
+  display: flex;
+  margin-top: 40px;
+  margin-left: 200px;
+  margin-right: 200px;
+  background-color: white;
+  filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+  font-family: 'Roboto', sans-serif;
+  &__info{
+    display: flex;
+    gap: 10px;
+    width: 50%;
+    padding: 20px;
+    &__name{
+      font-weight: 700;
+      display: block;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    &__description{
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    &__button{
+      &::before{
+        position: absolute;
+        content: '';
+        background: linear-gradient(-45deg, transparent 15px, white 0) bottom right;
+        width: 20px;
+        height: 15px;
+        top: -1px;
+        left: -1px;
+      }
+
+      &::after{
+        position: absolute;
+        content: '';
+        background: linear-gradient(145deg, transparent 15px, white 0) bottom right;
+        width: 20px;
+        height: 15px;
+        bottom: -1px;
+        right: -1px;
+      }
+
+      &-homepage{
+        background-color: rgba(159, 0, 19, 1);
+      }
+
+      &-wiki{
+        background-color: rgba(92, 92, 92, 1);
+      }
+    }
+  }
+  &__banner{
+    padding: 20px;
+    color: white;
+    background-color: rgba(35, 34, 34, 1);
+    width: 50%;
+    background-image: url("../public/images/Decoration.png");
+    background-repeat: no-repeat;
+    background-position: bottom 10px right -15%;
+    &__button{
+      &::before{
+        background: linear-gradient(-45deg, transparent 15px, rgba(35, 34, 34, 1) 0) bottom right !important;
+      }
+      &::after{
+        background: linear-gradient(145deg, transparent 15px, rgba(35, 34, 34, 1) 0) bottom right !important;
+      }
+    }
+    &__title{
+      font-size: 20px;
+      font-weight: 700;
+      & span{
+        display: block;
+        margin-top: 5px;
+      }
+    }
+    &__subtitle{
+      font-size: 20px;
+      font-weight: 700;
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+  }
+  &__button{
+    position: relative;
+    color: white;
+    padding: 10px 15px;
+    font-size: 14px;
+    margin-right: 20px;
+    transition: all .3s ease-in-out;
+    &-red{
+      background-color: rgba(159, 0, 19, 1);
+      &::before{
+        position: absolute;
+        content: '';
+        background: linear-gradient(-45deg, transparent 15px, white 0) bottom right;
+        width: 20px;
+        height: 15px;
+        top: -1px;
+        left: -1px;
+      }
+
+      &::after{
+        position: absolute;
+        content: '';
+        background: linear-gradient(145deg, transparent 15px, white 0) bottom right;
+        width: 20px;
+        height: 15px;
+        bottom: -1px;
+        right: -1px;
+      }
+    }
+
+    &:active{
+      transform: scale(1.05);
+      transition: all .3s ease-in-out;
+    }
+  }
+}
+
+@media (max-width: 1300px) {
+  .random-char{
+    flex-direction: column;
+    &__info{
+      width: 100%;
+      &__name{
+        font-size: 25px;
+      }
+      &__description{
+        font-size: 16px;
+      }
+    }
+    &__banner{
+      width: 100%;
+      background-position: bottom 10px right -5%;
+    }
+  }
+}
+
+
+@media (max-width: 1250px) {
+  .random-char {
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .random-char {
+    margin-left: 80px;
+    margin-right: 80px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .random-char{
+    &__info{
+      &__name{
+        font-size: 25px;
+      }
+      &__description{
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .random-char {
+    margin-left: 60px;
+    margin-right: 60px;
+    &__banner{
+      background-position: bottom 10px right -13%;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .random-char{
+    &__banner{
+      background-image: none;
+    }
+    &__info{
+      &__button-wiki{
+        margin-right: 0;
+      }
+    }
+    &__button{
+      padding: 8px 13px;
+      font-size: 13px;
+      margin-right: 10px;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .random-char {
+    margin-left: 20px;
+    margin-right: 20px;
+    &__info{
+      flex-direction: column;
+      &__name{
+        font-size: 16px;
+        margin-bottom: 0px;
+      }
+      &__description{
+        font-size: 12px;
+      }
+      & img{
+
+      }
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .random-char {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
