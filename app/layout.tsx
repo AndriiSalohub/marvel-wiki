@@ -1,5 +1,7 @@
+import Header from "@/components/Header";
 import { Metadata } from "next";
 import { FC, ReactNode } from "react";
+import "../styles/globals.scss";
 
 interface IRootLayout {
     children: ReactNode;
@@ -13,7 +15,10 @@ export const metadata: Metadata = {
 const RootLayout: FC<IRootLayout> = ({ children }) => {
     return (
         <html lang="en">
-            <body className="">{children}</body>
+            <body className="">
+                <Header />
+                {children}
+            </body>
         </html>
     );
 };
