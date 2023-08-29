@@ -1,4 +1,4 @@
-.random-char{
+.random-char {
   display: flex;
   margin-top: 40px;
   margin-left: 200px;
@@ -6,23 +6,32 @@
   background-color: white;
   filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
   font-family: 'Roboto', sans-serif;
-  &__info{
+
+  &__info {
     display: flex;
     gap: 10px;
     width: 50%;
     padding: 20px;
-    &__name{
+
+    &__image {
+      width: 180px;
+      height: 150px;
+    }
+
+    &__name {
       font-weight: 700;
       display: block;
       font-size: 18px;
       margin-bottom: 10px;
     }
-    &__description{
+
+    &__description {
       font-size: 14px;
       margin-bottom: 10px;
     }
-    &__button{
-      &::before{
+
+    &__button {
+      &::before {
         position: absolute;
         content: '';
         background: linear-gradient(-45deg, transparent 15px, white 0) bottom right;
@@ -32,7 +41,7 @@
         left: -1px;
       }
 
-      &::after{
+      &::after {
         position: absolute;
         content: '';
         background: linear-gradient(145deg, transparent 15px, white 0) bottom right;
@@ -42,16 +51,17 @@
         right: -1px;
       }
 
-      &-homepage{
+      &-homepage {
         background-color: rgba(159, 0, 19, 1);
       }
 
-      &-wiki{
+      &-wiki {
         background-color: rgba(92, 92, 92, 1);
       }
     }
   }
-  &__banner{
+
+  &__banner {
     padding: 20px;
     color: white;
     background-color: rgba(35, 34, 34, 1);
@@ -59,39 +69,51 @@
     background-image: url("../public/images/Decoration.png");
     background-repeat: no-repeat;
     background-position: bottom 10px right -15%;
-    &__button{
-      &::before{
+
+    &__button {
+      &::before {
         background: linear-gradient(-45deg, transparent 15px, rgba(35, 34, 34, 1) 0) bottom right !important;
       }
-      &::after{
+
+      &::after {
         background: linear-gradient(145deg, transparent 15px, rgba(35, 34, 34, 1) 0) bottom right !important;
       }
     }
-    &__title{
+
+    &__title {
       font-size: 20px;
       font-weight: 700;
-      & span{
+
+      & span {
         display: block;
         margin-top: 5px;
       }
     }
-    &__subtitle{
+
+    &__subtitle {
       font-size: 20px;
       font-weight: 700;
       margin-top: 30px;
       margin-bottom: 15px;
     }
   }
-  &__button{
+
+  &__button {
     position: relative;
-    color: white;
+
+    & a {
+      color: white;
+    }
+
     padding: 10px 15px;
     font-size: 14px;
     margin-right: 20px;
     transition: all .3s ease-in-out;
-    &-red{
+
+    &-red {
       background-color: rgba(159, 0, 19, 1);
-      &::before{
+
+      &::before {
         position: absolute;
         content: '';
         background: linear-gradient(-45deg, transparent 15px, white 0) bottom right;
@@ -101,7 +123,7 @@
         left: -1px;
       }
 
-      &::after{
+      &::after {
         position: absolute;
         content: '';
         background: linear-gradient(145deg, transparent 15px, white 0) bottom right;
@@ -112,7 +134,7 @@
       }
     }
 
-    &:active{
+    &:active {
       transform: scale(1.05);
       transition: all .3s ease-in-out;
     }
@@ -120,18 +142,22 @@
 }
 
 @media (max-width: 1300px) {
-  .random-char{
+  .random-char {
     flex-direction: column;
-    &__info{
+
+    &__info {
       width: 100%;
-      &__name{
+
+      &__name {
         font-size: 25px;
       }
-      &__description{
+
+      &__description {
         font-size: 16px;
       }
     }
-    &__banner{
+
+    &__banner {
       width: 100%;
       background-position: bottom 10px right -5%;
     }
@@ -154,12 +180,13 @@
 }
 
 @media (max-width: 1000px) {
-  .random-char{
-    &__info{
-      &__name{
+  .random-char {
+    &__info {
+      &__name {
         font-size: 25px;
       }
-      &__description{
+
+      &__description {
         font-size: 14px;
       }
     }
@@ -170,23 +197,26 @@
   .random-char {
     margin-left: 60px;
     margin-right: 60px;
-    &__banner{
+
+    &__banner {
       background-position: bottom 10px right -13%;
     }
   }
 }
 
 @media (max-width: 600px) {
-  .random-char{
-    &__banner{
+  .random-char {
+    &__banner {
       background-image: none;
     }
-    &__info{
-      &__button-wiki{
+
+    &__info {
+      &__button-wiki {
         margin-right: 0;
       }
     }
-    &__button{
+
+    &__button {
       padding: 8px 13px;
       font-size: 13px;
       margin-right: 10px;
@@ -198,16 +228,25 @@
   .random-char {
     margin-left: 20px;
     margin-right: 20px;
-    &__info{
+
+    &__info {
       flex-direction: column;
-      &__name{
+
+      &__image {
+        margin: 0 auto;
+      }
+
+      &__name {
         font-size: 16px;
         margin-bottom: 0px;
+        text-align: center;
       }
-      &__description{
+
+      &__description {
         font-size: 12px;
       }
-      & img{
+
+      & img {
 
       }
     }
