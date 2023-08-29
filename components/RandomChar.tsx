@@ -15,6 +15,7 @@ const RandomChar: FC = () => {
     refetchOnFocus: true,
   })
 
+  console.log(data)
   useEffect(() => {
     dispatch(
       updateCharId(Math.floor(Math.random() * (1011400 - 1011000)) + 1011000)

@@ -1,5 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { Character } from '@/models/models'
+import { AllChar } from '@/models/allChar'
+import { Character, RandomChar } from '@/models/randomChar'
 
 export const marvelApi = createApi({
   reducerPath: 'marvelApi',
@@ -14,9 +15,21 @@ export const marvelApi = createApi({
           apikey: '6e26eeacf3a4151ab8375a4f052c6323',
         },
       }),
-      transformResponse: (resposnse: any) => resposnse.data.results[0],
+      transformResponse: (response: RandomChar) => response.data.results[0],
+    }),
+    getAllCharacters: build.query<any, number>({
+      query: (offset) => ({
+        url: 'characters',
+        params: {
+          apikey: '6e26eeacf3a4151ab8375a4f052c6323',
+          limit: 9,
+          offset: offset,
+        },
+      }),
+      transformResponse: (response: AllChar) => response.data.results,
     }),
   }),
 })
 
-export const { useGetRandomCharacterQuery } = marvelApi
+export const { useGetRandomCharacterQuery, useGetAllCharactersQuery } =
+  marvelApi
