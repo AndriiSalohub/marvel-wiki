@@ -22,7 +22,7 @@ export const marvelApi = createApi({
         url: 'characters',
         params: {
           apikey: '6e26eeacf3a4151ab8375a4f052c6323',
-          limit: 9,
+          limit: 16,
           offset: offset,
         },
       }),
