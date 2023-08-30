@@ -1,8 +1,6 @@
 .random-char {
   display: flex;
   margin-top: 40px;
-  margin-left: 200px;
-  margin-right: 200px;
   background-color: white;
   filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
   font-family: 'Roboto', sans-serif;
@@ -165,21 +163,6 @@
   }
 }
 
-
-@media (max-width: 1250px) {
-  .random-char {
-    margin-left: 100px;
-    margin-right: 100px;
-  }
-}
-
-@media (max-width: 1024px) {
-  .random-char {
-    margin-left: 80px;
-    margin-right: 80px;
-  }
-}
-
 @media (max-width: 1000px) {
   .random-char {
     &__info {
@@ -196,9 +179,6 @@
 
 @media (max-width: 768px) {
   .random-char {
-    margin-left: 60px;
-    margin-right: 60px;
-
     &__banner {
       background-position: bottom 10px right -13%;
     }
@@ -227,9 +207,6 @@
 
 @media (max-width: 500px) {
   .random-char {
-    margin-left: 20px;
-    margin-right: 20px;
-
     &__info {
       flex-direction: column;
 
@@ -246,17 +223,8 @@
       &__description {
         font-size: 12px;
       }
-
-      & img {
-
-      }
+      
     }
   }
 }
 
-@media (max-width: 320px) {
-  .random-char {
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-}

@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 const RootLayout: FC<IRootLayout> = ({ children }) => {
   return (
     <html lang="en">
-      <body className="">
+      <body>
         <Header />
         <ReduxProvider>{children}</ReduxProvider>
       </body>
