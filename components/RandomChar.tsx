@@ -15,7 +15,6 @@ const RandomChar: FC = () => {
     refetchOnFocus: true,
   })
 
-  console.log(data)
   useEffect(() => {
     dispatch(
       updateCharId(Math.floor(Math.random() * (1011400 - 1011000)) + 1011000)
@@ -42,12 +41,12 @@ const RandomChar: FC = () => {
                     ? `${data.description.slice(0, 210)}...`
                     : 'This character has no description...'}
                 </p>
-                <button className="random-char__info__button random-char__info__button-homepage random-char__button">
+                <button className="random-char__info__button random-char__info__button-homepage random-char__button page-button">
                   <a href={data.urls[0].url} target="_blank">
                     HOMEPAGE
                   </a>
                 </button>
-                <button className="random-char__info__button random-char__info__button-wiki random-char__button">
+                <button className="random-char__info__button random-char__info__button-wiki random-char__button page-button">
                   <a href={data.urls[1].url} target="_blank">
                     WIKI
                   </a>

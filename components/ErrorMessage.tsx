@@ -10,6 +10,7 @@ const ErrorMessage = () => {
       height={160}
       style={{
         margin: '0 auto',
+        display: 'block',
       }}
     />
   )

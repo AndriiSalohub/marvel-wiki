@@ -1,0 +1,16 @@
+.load-btn {
+  display: block;
+  margin: 20px auto 40px auto;
+  background-color: #9F0013;
+  position: relative;
+  padding: 15px 25px;
+  font-family: "Roboto", sans-serif;
+  color: white;
+  font-size: 18px;
+
+
+  &:disabled {
+    filter: grayscale(.5);
+    cursor: wait;
+  }
+}

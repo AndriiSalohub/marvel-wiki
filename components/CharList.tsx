@@ -3,17 +3,36 @@
 import { FC } from 'react'
 import { useGetAllCharactersQuery } from '@/redux/slices/marvelApi'
 import '@/styles/CharList.scss'
-import Loader from '@/components/Loader'
 import ErrorMessage from '@/components/ErrorMessage'
 import CharListItem from '@/components/CharListItem'
 import { Result } from '@/models/allChar'
+import { useAppSelector } from '@/hooks/redux'
+import LoadBtn from '@/components/LoadBtn'
+import Loader from '@/components/Loader'
 
 const CharList: FC = () => {
-  const { data, isError, isFetching } = useGetAllCharactersQuery(210)
-  console.log(data)
+  const page = useAppSelector((state) => state.page.page)
+  const { data, isLoading, isError, isFetching } =
+    useGetAllCharactersQuery(page)
+  const chars = data?.data?.results ?? []
+
   return (
     <>
-      {isFetching ? (
+      {isError ? (
+        <div
+          style={{
+            marginTop: '60px',
+          }}
+        >
+          <ErrorMessage />
+        </div>
+      ) : null}
+      <ul className="char-list">
+        {chars?.map((item: Result) => {
+          return <CharListItem key={item.id} item={item} />
+        })}
+      </ul>
+      {isLoading ? (
         <div
           style={{
             marginTop: '60px',
@@ -22,22 +41,7 @@ const CharList: FC = () => {
           <Loader />
         </div>
       ) : null}
-      <ul className="char-list">
-        {isError ? (
-          <div
-            style={{
-              marginTop: '60px',
-            }}
-          >
-            <ErrorMessage />
-          </div>
-        ) : null}
-        {data && !isFetching && !isError
-          ? data?.map((item: Result) => {
-              return <CharListItem key={item.id} item={item} />
-            })
-          : null}
-      </ul>
+      <LoadBtn isFetching={isFetching} />
     </>
   )
 }

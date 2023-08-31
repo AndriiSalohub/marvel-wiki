@@ -1,7 +1,8 @@
 import Header from '@/components/Header'
 import { Metadata } from 'next'
 import { FC, ReactNode } from 'react'
-import '../styles/globals.scss'
+import '@/styles/globals.scss'
+import '@/styles/button.scss'
 import ReduxProvider from '@/redux/provider'
 
 interface IRootLayout {
