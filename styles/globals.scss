@@ -113,6 +113,14 @@ legend {
 
 body {
   padding: 0 300px;
+  position: relative;
+}
+
+.background-img {
+  width: 300px;
+  position: absolute;
+  bottom: -110px;
+  right: -10px;
 }
 
 @media (max-width: 1440px) {
@@ -124,6 +132,9 @@ body {
 @media (max-width: 1250px) {
   body {
     padding: 0px 100px;
+  }
+  .background-img {
+    width: 230px;
   }
 }
 
@@ -137,11 +148,17 @@ body {
   body {
     padding: 0px 40px;
   }
+  .background-img {
+    width: 180px;
+  }
 }
 
 @media (max-width: 500px) {
   body {
     padding: 0px 20px;
+  }
+  .background-img {
+    width: 160px;
   }
 }
 

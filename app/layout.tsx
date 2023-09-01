@@ -4,6 +4,8 @@ import { FC, ReactNode } from 'react'
 import '@/styles/globals.scss'
 import '@/styles/button.scss'
 import ReduxProvider from '@/redux/provider'
+import Image from 'next/image'
+import background from '../public/images/background.png'
 
 interface IRootLayout {
   children: ReactNode
@@ -20,6 +22,13 @@ const RootLayout: FC<IRootLayout> = ({ children }) => {
       <body>
         <Header />
         <ReduxProvider>{children}</ReduxProvider>
+        <Image
+          src={background}
+          alt="sdf"
+          width={400}
+          height={100}
+          className="background-img"
+        />
       </body>
     </html>
   )
