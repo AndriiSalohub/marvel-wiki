@@ -30,6 +30,9 @@
     }
 
     &__button {
+      &:hover {
+        transform: translateY(-5px);
+      }
 
       &-homepage {
         background-color: rgba(159, 0, 19, 1);
@@ -114,9 +117,13 @@
       }
     }
 
-    &:active {
-      transform: scale(1.05);
-      transition: all .3s ease-in-out;
+    //&:active {
+    //  transform: scale(1.05);
+    //  transition: all .3s ease-in-out;
+    //}
+
+    &:hover {
+      transform: translateY(-5px);
     }
   }
 }
