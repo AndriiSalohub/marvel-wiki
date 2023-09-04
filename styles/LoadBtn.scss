@@ -8,9 +8,9 @@
   color: white;
   font-size: 18px;
 
-
   &:disabled {
     filter: grayscale(.5);
     cursor: wait;
   }
 }
+

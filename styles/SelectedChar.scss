@@ -1,0 +1,92 @@
+.selected-char {
+  margin-top: 40px;
+  background-color: white;
+  filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+  height: 100%;
+  padding: 10px;
+  font-family: "Roboto", sans-serif;
+  width: 50%;
+
+  &__title {
+    margin-top: 10px;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+
+  &__info {
+    display: flex;
+    column-gap: 10px;
+
+    &__image {
+      width: 150px;
+      height: 150px;
+    }
+
+    &__title {
+      font-weight: 700;
+    }
+
+    &__button {
+      position: relative;
+      padding: 10px;
+      font-size: 14px;
+      margin-top: 7px;
+      color: white;
+      transition: transform .3s ease-in-out;
+
+      &-homepage {
+        background-color: rgba(159, 0, 19, 1);
+        margin-right: 5px;
+      }
+
+      &-wiki {
+        background-color: rgba(92, 92, 92, 1);
+      }
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+    }
+
+  }
+
+  &__description {
+    margin-top: 10px;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  &__comics {
+    font-weight: 700;
+    font-size: 17px;
+    margin-bottom: 5px;
+  }
+
+  &__comics-list {
+    &__item {
+      padding: 10px;
+      margin-bottom: 10px;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, .25);
+
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .selected-char {
+    width: 40%;
+  }
+}
+
+
+@media (max-width: 750px) {
+  .selected-char {
+    width: 50%;
+  }
+}
+
+@media (max-width: 500px) {
+  .selected-char {
+    display: none;
+  }
+}

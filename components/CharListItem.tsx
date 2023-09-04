@@ -2,25 +2,42 @@ import React, { FC, useState } from 'react'
 import '@/styles/CharListItem.scss'
 import { Result } from '@/models/allChar'
 import '@/styles/button.scss'
+import { useAppDispatch, useAppSelector } from '@/hooks/redux'
+import { selectChar } from '@/redux/slices/selectedCharSlice'
 
 interface IProps {
   item: Result
 }
 
 const CharListItem: FC<IProps> = ({ item }) => {
+  const dispatch = useAppDispatch()
+  const selectedCharId = useAppSelector(
+    (state) => state.selectedChar.selectedChar
+  )
   const [infoOpen, setInfoOpen] = useState(false)
-  console.log(item)
+
   return (
-    <li key={item.id} className="char-list__item">
+    <li
+      key={item.id}
+      className={
+        selectedCharId === item.id
+          ? 'char-list__item-selected'
+          : 'char-list__item'
+      }
+      onClick={() => {
+        dispatch(selectChar(item.id))
+        setInfoOpen((prevState) => !prevState)
+      }}
+    >
       <img
         src={item.thumbnail.path + '.' + item.thumbnail.extension}
         alt={item.name}
         className="char-list__item__image"
         onClick={() => setInfoOpen((prevState) => !prevState)}
       />
-      <p className="char-list__item__container">
+      <div className="char-list__item__container">
         <h1 className="char-list__item__title">{item.name}</h1>
-      </p>
+      </div>
       {infoOpen ? (
         <section className="char-list__item__info">
           <p className="char-list__item__info__description">
