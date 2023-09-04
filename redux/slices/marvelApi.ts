@@ -27,8 +27,8 @@ export const marvelApi = createApi({
       // }),
       query: (page) =>
         `characters?offset=${
-          210 + page * 16
-        }&limit=16&apikey=6e26eeacf3a4151ab8375a4f052c6323`,
+          210 + page * 9
+        }&limit=9&apikey=6e26eeacf3a4151ab8375a4f052c6323`,
       // Only have one cache entry because the arg always maps to one string
       serializeQueryArgs: ({ endpointName }: { endpointName: string }) => {
         return endpointName

@@ -1,22 +1,29 @@
 .char-list {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   margin-top: 40px;
-  column-gap: 40px;
+  column-gap: 10px;
   row-gap: 20px;
+}
+
+.load-btn-grid {
+  grid-column: 1/4;
 }
 
 @media (max-width: 1250px) {
   .char-list {
-    column-gap: 20px;
-    grid-template-columns: repeat(4, 1fr);
+    column-gap: 10px;
   }
 }
 
 @media (max-width: 1024px) {
   .char-list {
     column-gap: 80px;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .load-btn-grid {
+    grid-column: 1/2;
   }
 }
 

@@ -2,10 +2,12 @@
   box-shadow: 5px 5px 10px rgba(0, 0, 0, .25);
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
+  transition: transform .3s ease-in-out;
 
-  &_selected {
+  &-selected {
     box-shadow: 0 5px 20px #9F0013;
     transform: translateY(-8px);
+    transition: transform .3s ease-in-out;
   }
 
   &__image {
@@ -33,12 +35,17 @@
 @media (max-width: 1024px) {
   .char-list__item {
     &__image {
-      height: 300px;
+      height: 260px;
     }
   }
 }
 
 @media (max-width: 500px) {
+  .char-list__item {
+    &__image {
+      height: auto;
+    }
+  }
   .char-list__item__info {
     display: block;
     padding: 10px;
@@ -49,6 +56,7 @@
       padding: 10px;
       color: white;
       font-size: 14px;
+      font-family: 'Roboto', sans-serif;
 
       &-homepage {
         margin-right: 20px;
