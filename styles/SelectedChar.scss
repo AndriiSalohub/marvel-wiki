@@ -34,6 +34,11 @@
       color: white;
       transition: transform .3s ease-in-out;
 
+      a {
+        text-decoration: none;
+        color: white;
+      }
+
       &-homepage {
         background-color: rgba(159, 0, 19, 1);
         margin-right: 5px;
