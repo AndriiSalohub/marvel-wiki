@@ -21,12 +21,17 @@ const CharListItem: FC<IProps> = ({ item }) => {
       key={item.id}
       className={
         selectedCharId === item.id
-          ? 'char-list__item-selected'
+          ? 'char-list__item char-list__item-selected'
           : 'char-list__item'
       }
       onClick={() => {
         dispatch(selectChar(item.id))
-        setInfoOpen((prevState) => !prevState)
+      }}
+      tabIndex={0}
+      onKeyUp={(e) => {
+        if (e.key === 'Enter') {
+          dispatch(selectChar(item.id))
+        }
       }}
     >
       <img
@@ -46,10 +51,14 @@ const CharListItem: FC<IProps> = ({ item }) => {
               : 'This character has no description...'}
           </p>
           <button className="page-button char-list__item__info__button char-list__item__info__button-homepage">
-            HOMEPAGE
+            <a href={item.urls[0].url} target="_blank">
+              HOMEPAGE
+            </a>
           </button>
           <button className="page-button char-list__item__info__button char-list__item__info__button-wiki">
-            WIKI
+            <a href={item.urls[1].url} target="_blank">
+              WIKI
+            </a>
           </button>
           <h3 className="char-list__item__info__comics-title">Comics:</h3>
           {item.comics.items.length > 0 ? (

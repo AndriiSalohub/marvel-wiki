@@ -34,6 +34,7 @@
 
 @media (max-width: 1024px) {
   .char-list__item {
+
     &__image {
       height: 260px;
     }
@@ -42,6 +43,7 @@
 
 @media (max-width: 500px) {
   .char-list__item {
+
     &__image {
       height: auto;
     }
@@ -57,6 +59,11 @@
       color: white;
       font-size: 14px;
       font-family: 'Roboto', sans-serif;
+
+      a {
+        text-decoration: none;
+        color: white;
+      }
 
       &-homepage {
         margin-right: 20px;

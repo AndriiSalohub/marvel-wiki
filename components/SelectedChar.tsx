@@ -38,10 +38,14 @@ const SelectedChar: FC<IProps> = ({ char }) => {
             <div>
               <h3 className="selected-char__info__title">{data?.name}</h3>
               <button className="page-button selected-char__info__button selected-char__info__button-homepage">
-                HOMEPAGE
+                <a href={data?.urls[0].url} target="_blank">
+                  HOMEPAGE
+                </a>
               </button>
               <button className="page-button selected-char__info__button selected-char__info__button-wiki">
-                WIKI
+                <a href={data?.urls[1].url} target="_blank">
+                  WIKI
+                </a>
               </button>
             </div>
           </div>
