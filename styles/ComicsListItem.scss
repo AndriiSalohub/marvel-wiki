@@ -1,0 +1,16 @@
+.comics-list__item {
+  font-family: 'Roboto', 'sans-serif';
+  margin-bottom: 15px;
+
+  &__title {
+    font-weight: 700;
+    margin-top: 5px;
+    margin-bottom: 2px;
+    font-size: 18px;
+  }
+
+  &__price {
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: 700;
+  }
+}

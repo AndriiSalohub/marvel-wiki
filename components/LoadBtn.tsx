@@ -5,14 +5,15 @@ import { updatePage } from '@/redux/slices/pageSlice'
 
 interface IProps {
   isFetching: boolean
+  type: string
 }
 
-const LoadBtn: FC<IProps> = ({ isFetching }) => {
+const LoadBtn: FC<IProps> = ({ isFetching, type }) => {
   const dispatch = useAppDispatch()
   return (
     <button
       className="load-btn page-button"
-      onClick={() => dispatch(updatePage())}
+      onClick={() => dispatch(updatePage(type))}
       disabled={isFetching}
     >
       LOAD MORE

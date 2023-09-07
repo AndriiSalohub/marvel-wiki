@@ -12,7 +12,7 @@ import SelectedChar from '@/components/SelectedChar'
 import LoadBtn from '@/components/LoadBtn'
 
 const CharList: FC = () => {
-  const page = useAppSelector((state) => state.page.page)
+  const page = useAppSelector((state) => state.page.charsPage)
   const { data, isLoading, isError, isFetching } =
     useGetAllCharactersQuery(page)
   const chars = data?.data?.results ?? []
@@ -43,7 +43,7 @@ const CharList: FC = () => {
           })}
           {isLoading ? null : (
             <div className="load-btn-grid">
-              <LoadBtn isFetching={isFetching} />
+              <LoadBtn isFetching={isFetching} type="chars" />
             </div>
           )}
         </ul>
@@ -67,7 +67,7 @@ const CharList: FC = () => {
         </div>
       ) : null}
 
-      {isLoading ? <LoadBtn isFetching={isFetching} /> : null}
+      {isLoading ? <LoadBtn isFetching={isFetching} type="chars" /> : null}
     </>
   )
 }

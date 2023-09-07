@@ -1,18 +1,25 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 interface IState {
-  page: number
+  charsPage: number
+  comicsPage: number
 }
 
 const initialState: IState = {
-  page: 0,
+  charsPage: 0,
+  comicsPage: 0,
 }
 export const pageSlice = createSlice({
   name: 'page',
   initialState,
   reducers: {
-    updatePage: (state) => {
-      state.page += 1
+    updatePage: (state, action: PayloadAction<string>) => {
+      if (action.payload === 'chars') {
+        state.charsPage += 1
+      }
+      if (action.payload === 'comics') {
+        state.comicsPage += 1
+      }
     },
   },
 })
