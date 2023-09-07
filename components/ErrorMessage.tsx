@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import errorGif from '../public/error.gif'
+import errorGif from '@/public/error.gif'
 
 const ErrorMessage = () => {
   return (

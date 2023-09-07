@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { FC } from 'react'
-import '../styles/NavBar.scss'
+import '@/styles/NavBar.scss'
 
 interface INavLinks {
   label: string
