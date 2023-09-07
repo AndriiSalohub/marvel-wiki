@@ -1,7 +1,12 @@
 import { FC } from 'react'
+import Banner from '@/components/Banner'
 
 const Comics: FC = () => {
-  return <h2>Comics Page</h2>
+  return (
+    <>
+      <Banner />
+    </>
+  )
 }
 
 export default Comics
