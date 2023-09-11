@@ -2,6 +2,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { Character, RandomChar } from '@/models/randomChar'
 import { AllChar } from '@/models/allChar'
 import { AllComics } from '@/models/allComics'
+import { singleComics, singleComicsRoot } from '@/models/singleComics'
 
 export const marvelApi = createApi({
   reducerPath: 'marvelApi',
@@ -55,6 +56,16 @@ export const marvelApi = createApi({
         return currentArg !== previousArg
       },
     }),
+    getSingleComics: build.query<singleComics, number>({
+      query: (id) => ({
+        url: `comics/${id}`,
+        params: {
+          apikey: '6e26eeacf3a4151ab8375a4f052c6323',
+        },
+      }),
+      transformResponse: (response: singleComicsRoot) =>
+        response.data.results[0],
+    }),
   }),
 })
 
@@ -62,4 +73,5 @@ export const {
   useGetRandomCharacterQuery,
   useGetAllCharactersQuery,
   useGetAllComicsQuery,
+  useGetSingleComicsQuery,
 } = marvelApi

@@ -5,6 +5,7 @@ import { offsetReducer } from '@/redux/slices/offsetSlice'
 import { setupListeners } from '@reduxjs/toolkit/query'
 import { pageReducer } from '@/redux/slices/pageSlice'
 import { selectedCharReducer } from '@/redux/slices/selectedCharSlice'
+import { selectedComicsReducer } from '@/redux/slices/selectedComicsSlice'
 
 export const store = configureStore({
   reducer: {
@@ -13,6 +14,7 @@ export const store = configureStore({
     offset: offsetReducer,
     page: pageReducer,
     selectedChar: selectedCharReducer,
+    selectedComics: selectedComicsReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(marvelApi.middleware),
