@@ -13,6 +13,10 @@
   }
 
   &__back-bth {
+    & a {
+      color: black;
+    }
+
     align-self: start;
     justify-self: end;
     font-weight: 700;
@@ -41,3 +45,12 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .selected-comics {
+    &__info {
+      &__title {
+        font-size: 18px;
+      }
+    }
+  }
+}

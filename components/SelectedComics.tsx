@@ -6,6 +6,7 @@ import { useGetSingleComicsQuery } from '@/redux/slices/marvelApi'
 import Loader from '@/components/Loader'
 import ErrorMessage from '@/components/ErrorMessage'
 import '@/styles/SelectedComics.scss'
+import Link from 'next/link'
 
 const SelectedComics: FC = () => {
   const selectedComicsId = useAppSelector(
@@ -40,7 +41,9 @@ const SelectedComics: FC = () => {
                 {data?.prices[0].price}$
               </p>
             </div>
-            <button className="selected-comics__back-bth">Back to all</button>
+            <button className="selected-comics__back-bth">
+              <Link href={'/comics'}>Back to all</Link>
+            </button>
           </div>
         </section>
       ) : null}
