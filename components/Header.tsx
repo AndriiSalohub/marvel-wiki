@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import '@/styles/Header.scss'
 import NavBar from './NavBar'
+import Link from 'next/link'
 
 const navItems = [
   {
@@ -17,7 +18,10 @@ const Header: FC = () => {
   return (
     <header className="header">
       <h1 className="header__title">
-        <span className="header__title-red">Marvel</span> information portal
+        <Link href="/">
+          {' '}
+          <span className="header__title-red">Marvel</span> information portal
+        </Link>
       </h1>
       <NavBar navItems={navItems} />
     </header>
