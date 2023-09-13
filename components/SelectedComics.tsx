@@ -21,6 +21,7 @@ const SelectedComics: FC = () => {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
+      console.log('window is exist')
       if (localStorage.getItem('selectedComicsId') && !selectedComicsId) {
         return
       } else {
