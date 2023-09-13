@@ -20,10 +20,12 @@ const SelectedComics: FC = () => {
   )
 
   useEffect(() => {
-    if (localStorage.getItem('selectedComicsId') && !selectedComicsId) {
-      return
-    } else {
-      localStorage.setItem('selectedComicsId', selectedComicsId + '')
+    if (typeof window !== 'undefined') {
+      if (localStorage.getItem('selectedComicsId') && !selectedComicsId) {
+        return
+      } else {
+        localStorage.setItem('selectedComicsId', selectedComicsId + '')
+      }
     }
   }, [])
 
