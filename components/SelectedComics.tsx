@@ -1,6 +1,6 @@
 'use client'
 
-import React, { FC } from 'react'
+import React, { FC, useEffect } from 'react'
 import { useAppSelector } from '@/hooks/redux'
 import { useGetSingleComicsQuery } from '@/redux/slices/marvelApi'
 import Loader from '@/components/Loader'
@@ -9,12 +9,23 @@ import '@/styles/SelectedComics.scss'
 import Link from 'next/link'
 
 const SelectedComics: FC = () => {
+  let idFromStorage = ''
+
   const selectedComicsId = useAppSelector(
     (state) => state.selectedComics.selectedComics
   )
+
   const { data, isLoading, isError } = useGetSingleComicsQuery(
-    selectedComicsId || 0
+    selectedComicsId || +localStorage.getItem('selectedComicsId') || 0
   )
+
+  useEffect(() => {
+    if (localStorage.getItem('selectedComicsId') && !selectedComicsId) {
+      return
+    } else {
+      localStorage.setItem('selectedComicsId', selectedComicsId + '')
+    }
+  }, [])
 
   return (
     <>
