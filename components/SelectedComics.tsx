@@ -1,34 +1,19 @@
 'use client'
 
-import React, { FC, useEffect } from 'react'
-import { useAppSelector } from '@/hooks/redux'
+import React, { FC } from 'react'
 import { useGetSingleComicsQuery } from '@/redux/slices/marvelApi'
 import Loader from '@/components/Loader'
 import ErrorMessage from '@/components/ErrorMessage'
 import '@/styles/SelectedComics.scss'
+
 import Link from 'next/link'
 
-const SelectedComics: FC = () => {
-  let idFromStorage = ''
+interface IProps {
+  id: number
+}
 
-  const selectedComicsId = useAppSelector(
-    (state) => state.selectedComics.selectedComics
-  )
-
-  const { data, isLoading, isError } = useGetSingleComicsQuery(
-    selectedComicsId || +localStorage.getItem('selectedComicsId') || 0
-  )
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      console.log('window is exist')
-      if (localStorage.getItem('selectedComicsId') && !selectedComicsId) {
-        return
-      } else {
-        localStorage.setItem('selectedComicsId', selectedComicsId + '')
-      }
-    }
-  }, [])
+const SelectedComics: FC<IProps> = ({ id }) => {
+  const { data, isLoading, isError } = useGetSingleComicsQuery(id || 0)
 
   return (
     <>

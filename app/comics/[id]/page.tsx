@@ -3,14 +3,14 @@ import SelectedComics from '@/components/SelectedComics'
 
 interface IProps {
   params: {
-    title: string
+    di: number
   }
 }
 
-const SingleComics: FC<IProps> = ({ params: { title } }) => {
+const SingleComics: FC<IProps> = ({ params: { id } }) => {
   return (
     <>
-      <SelectedComics />
+      <SelectedComics id={id} />
     </>
   )
 }
